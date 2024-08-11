@@ -1,8 +1,3 @@
-import pandas as pd
-
-# Load the CSV file with responses
-df = pd.read_csv('responses.csv')
-
 ''''
 What type of problems do you enjoy solving the most?
 
