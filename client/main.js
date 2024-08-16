@@ -5,7 +5,7 @@ const emailInput = document.getElementById("email");
 
 const dropdowns = document.querySelectorAll(".dropdown");
 
-let domainMap = {
+let interestMap = {
     'A': 'Software Development',
     'B': 'Data Science',
     'C': 'Cybersecurity',
@@ -30,14 +30,26 @@ form.addEventListener("submit", (e) => {
             maxAnswer = answer;
         }
     });
-    const domain = domainMap[maxAnswer];
+    const interest = interestMap[maxAnswer];
 
     // Can be used for mailing list
     const name = nameInput.value;
     const email = emailInput.value;
+
+    fetch('http://localhost:3000/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          interest
+        })
+      });
     
     // Display response
-    const response = `We think you'd be interested in <mark>${domain}</mark>!`;
+    const response = `We think you'd be interested in <mark>${interest}</mark>!`;
     let responseElement = document.querySelector(".response");
     
     if (!responseElement) {
