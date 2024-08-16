@@ -36,7 +36,7 @@ form.addEventListener("submit", (e) => {
     const name = nameInput.value;
     const email = emailInput.value;
 
-    fetch(URL, {
+    fetch("https://interest-questionnaire.vercel.app", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
