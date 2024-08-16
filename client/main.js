@@ -36,7 +36,7 @@ form.addEventListener("submit", (e) => {
     const name = nameInput.value;
     const email = emailInput.value;
 
-    fetch('http://localhost:3000/', {
+    fetch(URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

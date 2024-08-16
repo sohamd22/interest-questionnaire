@@ -32,4 +32,4 @@ app.post('/', async (req, res) => {
     submitter.save();
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
