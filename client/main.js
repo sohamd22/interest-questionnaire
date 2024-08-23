@@ -55,7 +55,7 @@ form.addEventListener("submit", (e) => {
     if (!responseElement) {
         responseElement = document.createElement("p");
         responseElement.classList.add("response");
-        document.body.prepend(responseElement);
+        document.body.append(responseElement);
     }
     responseElement.innerHTML = response;
 });
