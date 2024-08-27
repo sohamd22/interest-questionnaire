@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import Form from "./pages/Form.jsx";
 import Result from "./pages/Result.jsx";
 
-const app = new Realm.App({id:process.env.MONGODB_APP_ID || "application-0-tkggfhw"});
+const app = new Realm.App({id:process.env.REACT_APP_MONGODB_APP_ID || ""});
 
 const App = () => {
-  const [user, setUser] = useState();
+  const [_user, setUser] = useState();
   const [submitters, setSubmitters] = useState([]);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const App = () => {
           const previousSubmitters = (await axios.get("http://localhost:5000/")).data;
           setSubmitters(previousSubmitters);
 
-          for await (const _ of collection.watch()) {
+          for await (const _change of collection.watch()) {
             const allSubmitters = (await axios.get("http://localhost:5000/")).data;
             setSubmitters(allSubmitters);
           }
