@@ -27,7 +27,7 @@ const Form = ({ setResult }) => {
     return (
         <div className="container flex flex-col gap-12 justify-center items-center">
             <Heading>Let's find you a domain!</Heading>
-            <form onSubmit={submitForm} className="flex flex-col gap-4 w-1/2 items-center">
+            <form onSubmit={submitForm} className="flex flex-col gap-4 w-full xl:w-1/2 lg:w-2/3 items-center">
                 <div className="flex flex-col md:flex-row gap-4 w-full">
                     <Input label="Your Name" placeholder="E.g. Walter White" type="text" name="name" setFormValues={setFormValues} />
                     <Input label="Your ASU Email" placeholder="E.g. wwhite8@asu.edu" type="email" name="email" setFormValues={setFormValues} />

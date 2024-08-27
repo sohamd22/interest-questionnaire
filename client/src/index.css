@@ -8,7 +8,7 @@ body {
   
   background-color: #121628;
   background-image: url("./assets/images/orangebg.jpg");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   overflow-x: hidden;
 }
