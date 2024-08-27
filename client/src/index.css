@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+body {
+  margin: 0;
+  font-family: Manrope, sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  
+  background-color: #121628;
+  background-image: url("./assets/images/orangebg.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+  color: white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
