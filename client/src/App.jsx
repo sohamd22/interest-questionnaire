@@ -18,11 +18,11 @@ const App = () => {
           const mongodb = app.currentUser.mongoClient("mongodb-atlas");
           const collection = mongodb.db("data").collection("submitters");
 
-          const previousSubmitters = (await axios.get("http://localhost:5000/")).data;
+          const previousSubmitters = (await axios.get("https://domain-questionnaire-backend.onrender.com/")).data;
           setSubmitters(previousSubmitters);
 
           for await (const _change of collection.watch()) {
-            const allSubmitters = (await axios.get("http://localhost:5000/")).data;
+            const allSubmitters = (await axios.get("https://domain-questionnaire-backend.onrender.com/")).data;
             setSubmitters(allSubmitters);
           }
       }

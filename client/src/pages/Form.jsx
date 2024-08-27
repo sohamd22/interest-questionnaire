@@ -16,7 +16,7 @@ const Form = ({ setResult }) => {
     const submitForm = async (event) => {
         event.preventDefault();
 
-        const result = (await axios.post("http://localhost:5000/", formValues)).data;
+        const result = (await axios.post("https://domain-questionnaire-backend.onrender.com/", formValues)).data;
         setResult(result);
 
         localStorage.setItem('name', formValues.name);
