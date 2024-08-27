@@ -3,6 +3,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Form from "./pages/Form.jsx";
 import Result from "./pages/Result.jsx";
+import Admin from "./pages/Admin.jsx";
+import { Routes, Route } from 'react-router-dom';
 
 const app = new Realm.App({id:process.env.REACT_APP_MONGODB_APP_ID || ""});
 
@@ -31,7 +33,10 @@ const App = () => {
 
   const [result, setResult] = useState(localStorage.getItem('domain') || '');
   return (
-    result ? <Result submitters={submitters}>{result}</Result> : <Form setResult={setResult} />
+    <Routes>
+      <Route path='/' element={result ? <Result>{result}</Result> : <Form setResult={setResult} />} />
+      <Route path='/admin' element={<Admin submitters={submitters} />} />
+    </Routes>
   );
 }
 
