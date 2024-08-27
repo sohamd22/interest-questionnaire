@@ -12,7 +12,13 @@ app.use(express.json());
 
 // Database
 mongoose.connect(process.env.ATLAS_URI)
-.then(() => console.log("MongoDB is connected successfully"))
+.then(() => {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => {
+        console.log(`Listening on port ${PORT}`);
+    });
+    console.log("MongoDB is connected successfully");
+})
 .catch((error) => console.error(error));
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
@@ -86,8 +92,3 @@ app.post("/", async (req, res) => {
     }
     submitter.domain ? res.json(submitter.domain) : "Error"; 
 });
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`);
-})
