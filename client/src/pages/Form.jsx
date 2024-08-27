@@ -11,8 +11,6 @@ import Button from "../components/Button.jsx";
 const Form = ({ setResult }) => {
     const [formValues, setFormValues] = useState({});
 
-    console.log(formValues);
-
     const submitForm = async (event) => {
         event.preventDefault();
 
@@ -66,7 +64,7 @@ const Form = ({ setResult }) => {
                     ]} />
                 </div>
                 <div className={`flex flex-col md:flex-row gap-4 w-full chosen-select`}>
-                    <Dropdown setFormValues={setFormValues} question="Which software/languages are you familiar with (can pick one/more)" options={[
+                    <Dropdown setFormValues={setFormValues} question="Which software/languages are you familiar with? (Can pick multiple)" options={[
                         "Adobe Suite / Figma",
                         "HTML / CSS / JavaScript",
                         "Python",
@@ -77,7 +75,7 @@ const Form = ({ setResult }) => {
                     ]} multiple={true} />
                 </div>
 
-                <TextArea label="Anything else about you" placeholder="E.g. I've built a..." setFormValues={setFormValues}></TextArea>
+                <TextArea label="Anything else about you (optional)" placeholder="E.g. I've built a..." setFormValues={setFormValues}></TextArea>
                 <Button />
             </form>
         </div>

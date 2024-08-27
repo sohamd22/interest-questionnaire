@@ -7,9 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-app.use(cors({
-    origin: "https://domain-questionnaire.onrender.com/"
-}));
+app.use(cors());
 app.use(express.json());
 
 // Database
