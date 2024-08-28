@@ -7,7 +7,7 @@ const Dropdown = ({ question, options, setFormValues, multiple }) => {
             <label className="font-medium">{question}</label>
             <Select onChange={e => setFormValues(formValues => 
                 { return !multiple ? {...formValues, [question]: e.label} : {...formValues, [question]: e.map(option => option.label).join(', ')}}
-                )} {...({isMulti: multiple})} className="text-neutral-900" options={options.map(option => { return {value: option.toLowerCase(), label: option} })} />
+                )} {...({isMulti: multiple})} className="text-neutral-900 rounded-lg overflow-hidden" options={options.map(option => { return {value: option.toLowerCase(), label: option} })} />
         </div>        
     );
 }
