@@ -1,13 +1,7 @@
-import PropTypes from "prop-types";
-
-const Heading = ({ children, className }) => {
+const Heading = ({ children }) => {
     return (
-        <h1 className={`text-4xl font-semibold text-center ${className}`}>{children}</h1>
+        <h1 className="text-4xl font-semibold">{children}</h1>
     );
-}
-
-Heading.propTypes = {
-    className: PropTypes.string
 }
 
 export default Heading;
