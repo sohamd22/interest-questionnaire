@@ -17,11 +17,14 @@ const Form = ({ setResult }) => {
         event.preventDefault();
 
         const result = (await axios.post("https://domain-questionnaire-backend.onrender.com/", formValues)).data;
-        setResult(result);
+        
+        if (result) {
+            setResult(result);
 
-        localStorage.setItem('name', formValues.name);
-        localStorage.setItem('email', formValues.email);
-        localStorage.setItem('domain', result);
+            localStorage.setItem('name', formValues.name);
+            localStorage.setItem('email', formValues.email);
+            localStorage.setItem('domain', result);
+        }
     }
 
     return (
