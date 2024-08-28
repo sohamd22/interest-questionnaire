@@ -8,6 +8,8 @@ import Dropdown from "../components/Dropdown.jsx";
 import TextArea from "../components/TextArea.jsx";
 import Button from "../components/Button.jsx";
 
+import logo from "../assets/images/logo.svg";
+
 const Form = ({ setResult }) => {
     const [formValues, setFormValues] = useState({});
 
@@ -24,6 +26,7 @@ const Form = ({ setResult }) => {
 
     return (
         <div className="container flex flex-col gap-12 justify-center items-center">
+            <img src={logo} alt="devlabs-logo" />
             <Heading>Let's find you a domain!</Heading>
             <form onSubmit={submitForm} className="flex flex-col gap-4 w-full xl:w-1/2 lg:w-2/3 items-center">
                 <div className="flex flex-col md:flex-row gap-4 w-full">

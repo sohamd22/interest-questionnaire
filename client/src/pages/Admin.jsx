@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 
+import logo from "../assets/images/logo.svg";
+
 const Admin = ({ submitters }) => {
     return (
         <div className="flex flex-col items-center gap-8">
-
+            <img src={logo} alt="devlabs-logo" />
             <div className="flex flex-wrap gap-8">
                 <div className="flex flex-col gap-2">
                     <p className={`text-lg font-semibold`}>Web Development</p>
