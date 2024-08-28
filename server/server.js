@@ -90,5 +90,5 @@ app.post("/", async (req, res) => {
             submitter.save();
         }
     }
-    submitter.domain ? res.json(submitter.domain) : "Error"; 
+    submitter.domain ? res.json(submitter.domain) : ""; 
 });
